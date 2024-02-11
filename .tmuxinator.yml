@@ -1,0 +1,17 @@
+---
+name: <%= Dir.pwd.split('/')[-1] %>
+root: <%= Dir.pwd %>
+
+on_project_exit:
+  - echo "bye"
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - poetry run nvim
+        - poetry run flask --app=src.app run
+        - |
+          poetry run tailwindcss --watch \
+            -i ./static/src/main.css -o static/dist/main.css
+        -
