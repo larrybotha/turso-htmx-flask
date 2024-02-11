@@ -13,5 +13,5 @@ windows:
         - poetry run flask --app=src.app run
         - |
           poetry run tailwindcss --watch \
-            -i ./static/src/main.css -o static/dist/main.css
+            -i ./src/assets/styles/main.css -o assets/dist/main.css
         -
