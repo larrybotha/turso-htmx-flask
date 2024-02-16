@@ -11,7 +11,5 @@ windows:
       panes:
         - poetry run nvim
         - poetry run flask --app=src.app run
-        - |
-          poetry run tailwindcss --watch \
-            -i ./src/static/styles/main.css -o src/static/dist/main.css
+        - npx just tailwind
         -
