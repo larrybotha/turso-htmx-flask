@@ -2,6 +2,9 @@
 name: <%= Dir.pwd.split('/')[-1] %>
 root: <%= Dir.pwd %>
 
+pre_window:
+  - source .venv/bin/activate
+
 on_project_exit:
   - echo "bye"
 
@@ -9,7 +12,7 @@ windows:
   - editor:
       layout: main-vertical
       panes:
-        - poetry run nvim
-        - poetry run flask --app=src.app run
+        - vim
+        - rye run flask --app=src.app run
         - npx just tailwind
         -
