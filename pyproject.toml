@@ -1,24 +1,32 @@
-[tool.poetry]
+[project]
 name = "turso-htmx-flask"
 version = "0.1.0"
-description = "Demo Turso, htmx, and Flask project"
-authors = ["Your Name <you@example.com>"]
-license = "MIT"
+description = "Turos + htmx + flask"
+authors = [{ name = "Larry Botha" }]
 readme = "README.md"
+requires-python = ">= 3.8"
+license = "MIT"
+dependencies = [
+  "Flask==3.0.2",
+  "Flask-Assets==2.1.0",
+  "sqlalchemy-libsql==0.1.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-Flask = "^3.0.2"
-Flask-Assets = "^2.1.0"
-sqlalchemy-libsql = "^0.1.0"
 
-[tool.poetry.group.dev.dependencies]
-black = "^24.1.1"
-mypy = "^1.8.0"
-isort = "^5.13.2"
-ruff = "^0.2.1"
-pytailwindcss = "^0.2.0"
+[project.scripts]
+hello = "turso_htmx_flask:hello"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = ["black", "mypy", "isort", "ruff", "pytailwindcss"]
+
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/turso_htmx_flask"]
