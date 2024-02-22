@@ -24,7 +24,11 @@ def init_config() -> _Config:
         connect_args={"check_same_thread": False},
         echo=True,
     )
-    app = Flask(import_name="app", static_folder="src/static")
+    app = Flask(
+        import_name="app",
+        static_folder="src/static",
+        template_folder="src/templates",
+    )
 
     app_config = _Config(app=app, db_engine=db_engine)
 
