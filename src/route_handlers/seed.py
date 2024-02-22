@@ -1,20 +1,17 @@
 import uuid
-from datetime import datetime
 
 from flask import redirect, url_for
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from ..models import Base, Link, User
-
-current_time = datetime.now()
-current_time_in_seconds = int(
-    float((current_time - datetime(1970, 1, 1)).total_seconds())
-)
+from ..utils.time import get_current_time_in_seconds
 
 
 def seed_factory(db_engine, /):
     def seed():
+        current_time_in_seconds = get_current_time_in_seconds()
+
         # Create all tables in metadata
         Base.metadata.create_all(db_engine)
 
