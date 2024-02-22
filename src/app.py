@@ -16,6 +16,7 @@ js.build()
 
 app = config.app
 
+app.route("/seed")(seed_factory(config.db_engine))
 
 
 @app.route("/")
