@@ -40,6 +40,8 @@ markupsafe==2.1.5
 multidict==6.0.5
     # via aiohttp
     # via yarl
+python-dotenv==1.0.1
+    # via turso-htmx-flask
 sqlalchemy==2.0.27
     # via sqlalchemy-libsql
 sqlalchemy-libsql==0.1.0
