@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+
+function _main() {
+  db_name="${1:-turso-htmx-flask}"
+  db_url="$(turso db show --url "${db_name}")"
+  db_auth_token="$(turso db tokens create turso-htmx-flask)"
+
+  echo "TURSO_DB_URL=\"${db_url}\"" > .env
+  echo "TURSO_DB_AUTH_TOKEN=\"${db_auth_token}\"" >> .env
+}
+
+_main "${@}"
+
+# vim: filetype=bash
