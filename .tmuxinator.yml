@@ -13,6 +13,7 @@ windows:
       layout: main-vertical
       panes:
         - vim
-        - rye run flask --app=src.app run
+        - nodemon -w src --exec "rye run flask --debug --app=src.app run" || true
+
         - npx just tailwind
         -
