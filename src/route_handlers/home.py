@@ -70,6 +70,7 @@ def _handle_post(db_engine: Engine, /):
             <div class='success'>
                 Account added. Delete ID: ({delete_id})
             </div>
+
             <p class='p-2 text-center'>
                 You social links are now available at
                 <a
