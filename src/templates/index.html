@@ -7,6 +7,7 @@
 {% block content %}
   <div class="p-8 mx-auto max-w-xl">
     <form class="p-4 flex flex-col space-y-2"
+          method="post"
           hx-post="{{ page_url }}"
           hx-target="#response">
       <div class="p-2 font-semibold text-teal-600">User Details</div>
