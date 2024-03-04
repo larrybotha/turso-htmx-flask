@@ -7,10 +7,11 @@ readme = "README.md"
 requires-python = ">= 3.8"
 license = "MIT"
 dependencies = [
-  "Flask==3.0.2",
-  "Flask-Assets==2.1.0",
-  "sqlalchemy-libsql==0.1.0",
-  "python-dotenv==1.0.1",
+    "Flask==3.0.2",
+    "Flask-Assets==2.1.0",
+    "sqlalchemy-libsql==0.1.0",
+    "python-dotenv==1.0.1",
+    "snoop>=0.4.3",
 ]
 
 
