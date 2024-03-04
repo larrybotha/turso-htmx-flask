@@ -15,8 +15,8 @@ js.build()
 
 app = config.app
 
-app.route("/seed")(seed_factory(config.db_engine))
-app.route("/")(home_factory(config.db_engine))
+app.route("/seed", methods=["POST"])(seed_factory(config.db_engine))
+app.route("/", methods=["GET", "POST"])(home_factory(config.db_engine))
 
 if __name__ == "__main__":
     app.run()
