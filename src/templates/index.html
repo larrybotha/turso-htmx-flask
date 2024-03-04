@@ -15,7 +15,7 @@
         <input type="text"
                name="full_name"
                placeholder="Full Name"
-               value="{{ request.form['full_name'] }}"
+               value="{{ request.form['full_name'] or 'hey' }}"
                _="on htmx:validation:validate if my.value == '' call me.setCustomValidity('Please enter your full name') else call me.setCustomValidity('')"
                required />
       </div>
@@ -24,7 +24,7 @@
         <input type="email"
                name="email"
                placeholder="someone@mail.com"
-               value="{{ request.form['email'] }}"
+               value="{{ request.form['email'] or 'test@example.com' }}"
                _="on htmx:validation:validate if my.value == '' call me.setCustomValidity('Please enter your email') else call me.setCustomValidity('')"
                required />
       </div>
@@ -33,7 +33,7 @@
         <input type="text"
                name="user_name"
                placeholder="username"
-               value="{{ request.form['email'] }}"
+               value="{{ request.form['email'] or 'hey' }}"
                _="on htmx:validation:validate if my.value == '' call me.setCustomValidity('Please enter your username') else call me.setCustomValidity('')"
                required />
       </div>
